@@ -157,7 +157,7 @@ export default function Portfolio() {
           content="Explore Jonas Werner's portfolio with expertise in web development, mobile app development, and UI/UX design."
         />
         <meta name="twitter:image" content="/images/j.png" />
-        <link rel="icon" type="image" href="/images/round-logo.png" />
+        <link rel="icon" type="image/png" href="/images/round-logo.png?v=1" />
         <link rel="manifest" href="/site.webmanifest" />
         <div className="container mx-auto flex justify-between items-center p-4">
           <h1 className="text-2xl font-bold">

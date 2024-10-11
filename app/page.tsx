@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,6 +19,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import JLogo from "@/public/images/j.png";
 import Headshot from "@/public/images/headshot.jpg";
 
+export const metadata = {
+  title: "Jonas Werner | Web Developer",
+  description: "Jonas Werner - Web Developer. Explore my portfolio showcasing web development, mobile apps, and design expertise.",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
+}
 export default function Portfolio() {
   const skills = [
     { name: "Web Development", level: 90 },
@@ -156,7 +162,7 @@ export default function Portfolio() {
           content="Explore Jonas Werner's portfolio with expertise in web development, mobile app development, and UI/UX design."
         />
         <meta name="twitter:image" content="/images/j.png" />
-        <link rel="icon" type="image/png" href="/images/round-logo.png?v=1" />
+        <link rel="icon" type="image/png" href="/images/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
         <div className="container mx-auto flex justify-between items-center p-4">
           <h1 className="text-2xl font-bold">

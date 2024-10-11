@@ -89,22 +89,19 @@ export default function Portfolio() {
       company: "Dealino",
       position: "Intern",
       period: "Sept 2022 - Oct 2022",
-      description:
-        "Developed my first portfolio using HTML, CSS and JS.",
+      description: "Developed my first portfolio using HTML, CSS and JS.",
     },
     {
       company: "IBYKUS",
       position: "Intern",
       period: "Jan 2022 - Feb 2022",
-      description:
-        "Created a python quiz app using Tkinter.",
+      description: "Created a python quiz app using Tkinter.",
     },
     {
       company: "InstantDocs",
       position: "Website Manager",
       period: "May 2023 - Now",
-      description:
-        "Created and configured websites and sales automations",
+      description: "Created and configured websites and sales automations",
     },
   ];
 
@@ -130,6 +127,38 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
+        <title>Jonas Werner | Web Developer </title>
+        <meta
+          name="description"
+          content="Jonas Werner - Web Developer. Explore my portfolio showcasing web development, mobile apps, and design expertise."
+        />
+        <meta
+          name="keywords"
+          content="Jonas Werner, Web Developer, UI/UX Designer, Portfolio, Web Development, Mobile App, Design"
+        />
+        <meta name="author" content="Jonas Werner" />
+        <meta
+          property="og:title"
+          content="Jonas Werner | Web Developer"
+        />
+        <meta
+          property="og:description"
+          content="Explore Jonas Werner's portfolio with expertise in web development, mobile app development, and UI/UX design."
+        />
+        <meta property="og:image" content="/images/j.png" />
+        <meta property="og:url" content="https://jonaswerner.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Jonas Werner | Web Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore Jonas Werner's portfolio with expertise in web development, mobile app development, and UI/UX design."
+        />
+        <meta name="twitter:image" content="/images/j.png" />
+        <link rel="icon" type="image" href="/images/round-logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <div className="container mx-auto flex justify-between items-center p-4">
           <h1 className="text-2xl font-bold">
             Jonas <span className="text-orange-500">Werner</span>
@@ -194,8 +223,12 @@ export default function Portfolio() {
             <Button className="bg-orange-500 hover:bg-orange-600">
               Download CV
             </Button>
-            <a href="https://github.com/wallnussjonas" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline">My Work</Button>
+            <a
+              href="https://github.com/wallnussjonas"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline">My Work</Button>
             </a>
           </div>
         </div>
@@ -348,10 +381,14 @@ export default function Portfolio() {
                 <CardContent className="p-4">
                   <h3 className="font-bold mb-4">{project.title}</h3>
                   <div className="flex space-x-2">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" size="sm">
-                      Website
-                    </Button>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" size="sm">
+                        Website
+                      </Button>
                     </a>
                   </div>
                 </CardContent>
@@ -362,59 +399,59 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-    <section id="achievements" className="w-full py-12 md:py-20 bg-gray-900">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-4 text-center text-white">
-          My Experience
-        </h2>
-        <p className="text-center mb-8 md:mb-12 text-gray-400 max-w-2xl mx-auto">
-          A chronological journey through my professional development,
-          showcasing the diverse skills and experiences gained from various
-          internships.
-        </p>
-        <div className="relative">
-          {/* Vertical line - hidden on small screens */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-orange-500 hidden md:block"></div>
+      <section id="achievements" className="w-full py-12 md:py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4 text-center text-white">
+            My Experience
+          </h2>
+          <p className="text-center mb-8 md:mb-12 text-gray-400 max-w-2xl mx-auto">
+            A chronological journey through my professional development,
+            showcasing the diverse skills and experiences gained from various
+            internships.
+          </p>
+          <div className="relative">
+            {/* Vertical line - hidden on small screens */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-orange-500 hidden md:block"></div>
 
-          {internships.map((internship, index) => (
-            <div
-              key={index}
-              className={`mb-8 flex flex-col md:flex-row ${
-                index % 2 === 0 ? "md:justify-start" : "md:justify-end"
-              } items-center w-full`}
-            >
-              <Card
-                className={`w-full md:w-5/12 ${
-                  index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
-                } bg-gray-800 border-gray-700`}
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg font-semibold text-orange-500">
-                    {internship.company}
-                  </CardTitle>
-                  <p className="text-sm font-medium text-white">
-                    {internship.position}
-                  </p>
-                  <p className="text-sm text-gray-400">{internship.period}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-300">
-                    {internship.description}
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Timeline dot - hidden on small screens, visible on md and above */}
+            {internships.map((internship, index) => (
               <div
-                className={`w-4 h-4 rounded-full bg-orange-500 border-4 border-white hidden md:block md:absolute md:left-1/2 md:transform md:-translate-x-1/2 ${
-                  index % 2 === 0 ? "md:mt-5" : "md:mb-5"
-                }`}
-              ></div>
-            </div>
-          ))}
+                key={index}
+                className={`mb-8 flex flex-col md:flex-row ${
+                  index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                } items-center w-full`}
+              >
+                <Card
+                  className={`w-full md:w-5/12 ${
+                    index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
+                  } bg-gray-800 border-gray-700`}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg font-semibold text-orange-500">
+                      {internship.company}
+                    </CardTitle>
+                    <p className="text-sm font-medium text-white">
+                      {internship.position}
+                    </p>
+                    <p className="text-sm text-gray-400">{internship.period}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-300">
+                      {internship.description}
+                    </p>
+                  </CardContent>
+                </Card>
+                {/* Timeline dot - hidden on small screens, visible on md and above */}
+                <div
+                  className={`w-4 h-4 rounded-full bg-orange-500 border-4 border-white hidden md:block md:absolute md:left-1/2 md:transform md:-translate-x-1/2 ${
+                    index % 2 === 0 ? "md:mt-5" : "md:mb-5"
+                  }`}
+                ></div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    
+      </section>
+
       {/* Contact Me Section */}
       <section id="contact" className="py-20 bg-[#0c0e1a]">
         <div className="container mx-auto px-4 max-w-2xl">

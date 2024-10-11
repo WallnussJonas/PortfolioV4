@@ -456,7 +456,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-3xl font-bold mb-4 text-center">Contact Me</h2>
           <p className="text-center mb-12 text-gray-400">
-            Let's turn your ideas into reality
+            Let&#39;s turn your ideas into reality
           </p>
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -172,7 +172,7 @@ export default function Portfolio() {
           </nav>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="ml-auto md:hidden">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -183,7 +183,7 @@ export default function Portfolio() {
                   "About",
                   "Services",
                   "Projects",
-                  "Achievements",
+                  "Experience",
                   "Contact",
                 ].map((item) => (
                   <a

@@ -18,14 +18,11 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import JLogo from "@/public/images/j.png";
 import Headshot from "@/public/images/headshot.jpg";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Link from "next/link";
 
-export const metadata = {
-  title: "Jonas Werner | Web Developer",
-  description: "Jonas Werner - Web Developer. Explore my portfolio showcasing web development, mobile apps, and design expertise.",
-  icons: {
-    icon: "/images/favicon.ico",
-  },
-}
+
 export default function Portfolio() {
   const skills = [
     { name: "Web Development", level: 90 },
@@ -68,7 +65,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Schulsync.com",
-      image: "/images/schulsync.png",
+      image: "/images/Schulsync.png",
       link: "https://schulsync.com",
     },
     {
@@ -114,22 +111,24 @@ export default function Portfolio() {
     {
       icon: <Users className="w-8 h-8 text-green-500" />,
       title: "Happy Clients",
-      value: "23",
+      value: "23+",
     },
     {
       icon: <Clock className="w-8 h-8 text-blue-500" />,
       title: "Hours Coded",
-      value: "2,316",
+      value: "2,316+",
     },
     {
       icon: <GitBranch className="w-8 h-8 text-green-500" />,
       title: "Git Commits",
-      value: "469",
+      value: "469+",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
+      <Analytics />
+      <SpeedInsights />
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
         <title>Jonas Werner | Web Developer </title>
@@ -142,10 +141,7 @@ export default function Portfolio() {
           content="Jonas Werner, Web Developer, UI/UX Designer, Portfolio, Web Development, Mobile App, Design"
         />
         <meta name="author" content="Jonas Werner" />
-        <meta
-          property="og:title"
-          content="Jonas Werner | Web Developer"
-        />
+        <meta property="og:title" content="Jonas Werner | Web Developer" />
         <meta
           property="og:description"
           content="Explore Jonas Werner's portfolio with expertise in web development, mobile app development, and UI/UX design."
@@ -153,10 +149,7 @@ export default function Portfolio() {
         <meta property="og:image" content="/images/j.png" />
         <meta property="og:url" content="https://jonaswerner.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Jonas Werner | Web Developer"
-        />
+        <meta name="twitter:title" content="Jonas Werner | Web Developer" />
         <meta
           name="twitter:description"
           content="Explore Jonas Werner's portfolio with expertise in web development, mobile app development, and UI/UX design."
@@ -494,10 +487,62 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center p-6 bg-gray-800 border-t border-gray-700">
-        <p className="text-gray-400">
-          © 2024 Jonas Werner. All rights reserved.
-        </p>
+      <footer className="bg-gray-800 text-white py-8 px-4">
+        <div className="container mx-auto">
+          <div className="flex justify-center space-x-6 mb-6">
+            <Link
+              href="https://www.instagram.com/wallnussjonas/"
+              target="_blank"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <Image src="/icons/instagram-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link
+              href="https://www.youtube.com/channel/UCn8Q7vcAnqcU8tVeQcIOQug"
+              target="_blank"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <Image src="/icons/youtube-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <span className="sr-only">YouTube</span>
+            </Link>
+            <Link
+              href="https://twitter.com/wallnussjonas"
+              target="_blank"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <Image src="/icons/x-twitter-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <span className="sr-only">Twitter</span>
+            </Link>
+            <Link
+              href="https://www.twitch.tv/wallnussjonas"
+              target="_blank"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <Image src="/icons/twitch-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <span className="sr-only">Twitch</span>
+            </Link>
+            <Link
+              href="https://github.com/WallnussJonas"
+              target="_blank"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <Image src="/icons/github-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <span className="sr-only">Github</span>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/jonas-werner-73b531223/"
+              target="_blank"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <Image src="/icons/linkedin-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+          </div>
+          <div className="text-center text-sm text-gray-400">
+            <p>© 2024 Jonas Werner. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );

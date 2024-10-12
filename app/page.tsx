@@ -1,7 +1,7 @@
+"use client";
+import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -18,10 +18,8 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import JLogo from "@/public/images/j.png";
 import Headshot from "@/public/images/headshot.jpg";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import Link from "next/link";
-
+import { ContactCard, ContactCardContent } from "@/components/ui/contactcard";
 
 export default function Portfolio() {
   const skills = [
@@ -127,8 +125,6 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <Analytics />
-      <SpeedInsights />
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
         <title>Jonas Werner | Web Developer </title>
@@ -162,7 +158,7 @@ export default function Portfolio() {
             Jonas <span className="text-orange-500">Werner</span>
           </h1>
           <nav className="hidden md:flex space-x-6">
-            {["About", "Services", "Projects", "Achievements", "Contact"].map(
+            {["About", "Services", "Projects", "Experience", "Contact"].map(
               (item) => (
                 <a
                   key={item}
@@ -201,9 +197,11 @@ export default function Portfolio() {
               </nav>
             </SheetContent>
           </Sheet>
-          <Button className="hidden md:flex bg-orange-500 hover:bg-orange-600">
-            Hire Me!
-          </Button>
+          <Link href="#contact">
+            <Button className="hidden md:flex bg-orange-500 hover:bg-orange-600">
+              Hire Me!
+            </Button>
+          </Link>
         </div>
       </header>
 
@@ -397,7 +395,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="achievements" className="w-full py-12 md:py-20 bg-gray-900">
+      <section id="experience" className="w-full py-12 md:py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4 text-center text-white">
             My Experience
@@ -452,37 +450,54 @@ export default function Portfolio() {
 
       {/* Contact Me Section */}
       <section id="contact" className="py-20 bg-[#0c0e1a]">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl font-bold mb-4 text-center">Contact Me</h2>
-          <p className="text-center mb-12 text-gray-400">
-            Let&#39;s turn your ideas into reality
-          </p>
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Input
-                type="text"
-                placeholder="Name"
-                className="bg-white text-black placeholder-gray-500 rounded-md"
-              />
-              <Input
-                type="email"
-                placeholder="Email"
-                className="bg-white text-black placeholder-gray-500 rounded-md"
-              />
-            </div>
-            <Input
-              type="text"
-              placeholder="Subject"
-              className="bg-white text-black placeholder-gray-500 rounded-md"
-            />
-            <Textarea
-              placeholder="Message"
-              className="min-h-[150px] bg-white text-black placeholder-gray-500 rounded-md"
-            />
-            <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-md">
-              Send Message
-            </Button>
-          </form>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">
+            Contact Me
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <ContactCard className="bg-gray-800 border-gray-700">
+              <ContactCardContent className="flex flex-col items-center p-6">
+                <Image
+                  src="/icons/envelope-regular.svg"
+                  alt="Email"
+                  width={34}
+                  height={34}
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
+                <p className="text-gray-400 text-center">
+                  contact@jonaswerner.com
+                </p>
+              </ContactCardContent>
+            </ContactCard>
+            <ContactCard className="bg-gray-800 border-gray-700">
+              <ContactCardContent className="flex flex-col items-center p-6">
+                <Image
+                  src="/icons/phone-solid.svg"
+                  alt="Phone"
+                  width={34}
+                  height={34}
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">Phone</h3>
+                <p className="text-gray-400 text-center">
+                  +49 (176) 58 87 62 65
+                </p>
+              </ContactCardContent>
+            </ContactCard>
+            <ContactCard className="bg-gray-800 border-gray-700">
+              <ContactCardContent className="flex flex-col items-center p-6">
+                <Image
+                  src="/icons/discord-brands-solid.svg"
+                  alt="Discord"
+                  width={34}
+                  height={34}
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Discord
+                </h3>
+                <p className="text-gray-400 text-center">JonasDieNuss</p>
+              </ContactCardContent>
+            </ContactCard>
+          </div>
         </div>
       </section>
 
@@ -495,7 +510,12 @@ export default function Portfolio() {
               target="_blank"
               className="hover:text-gray-400 transition-colors"
             >
-              <Image src="/icons/instagram-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <Image
+                src="/icons/instagram-brands-solid.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
               <span className="sr-only">Instagram</span>
             </Link>
             <Link
@@ -503,7 +523,12 @@ export default function Portfolio() {
               target="_blank"
               className="hover:text-gray-400 transition-colors"
             >
-              <Image src="/icons/youtube-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <Image
+                src="/icons/youtube-brands-solid.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
               <span className="sr-only">YouTube</span>
             </Link>
             <Link
@@ -511,7 +536,12 @@ export default function Portfolio() {
               target="_blank"
               className="hover:text-gray-400 transition-colors"
             >
-              <Image src="/icons/x-twitter-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <Image
+                src="/icons/x-twitter-brands-solid.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
               <span className="sr-only">Twitter</span>
             </Link>
             <Link
@@ -519,7 +549,12 @@ export default function Portfolio() {
               target="_blank"
               className="hover:text-gray-400 transition-colors"
             >
-              <Image src="/icons/twitch-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <Image
+                src="/icons/twitch-brands-solid.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
               <span className="sr-only">Twitch</span>
             </Link>
             <Link
@@ -527,7 +562,12 @@ export default function Portfolio() {
               target="_blank"
               className="hover:text-gray-400 transition-colors"
             >
-              <Image src="/icons/github-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <Image
+                src="/icons/github-brands-solid.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
               <span className="sr-only">Github</span>
             </Link>
             <Link
@@ -535,7 +575,12 @@ export default function Portfolio() {
               target="_blank"
               className="hover:text-gray-400 transition-colors"
             >
-              <Image src="/icons/linkedin-brands-solid.svg" alt="Instagram" width={24} height={24}/>
+              <Image
+                src="/icons/linkedin-brands-solid.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
               <span className="sr-only">LinkedIn</span>
             </Link>
           </div>

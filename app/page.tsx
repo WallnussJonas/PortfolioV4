@@ -114,7 +114,7 @@ export default function Portfolio() {
     {
       icon: <Clock className="w-8 h-8 text-blue-500" />,
       title: "Hours Coded",
-      value: "2,316+",
+      value: "316+",
     },
     {
       icon: <GitBranch className="w-8 h-8 text-green-500" />,

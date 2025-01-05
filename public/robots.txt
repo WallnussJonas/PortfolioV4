@@ -2,6 +2,6 @@ User-agent: *
 Allow: /$
 Allow: /robots.txt$
 Allow: /sitemap.xml$
-Disallow: /
+Disallow: 
 
 Sitemap: https://www.jonaswerner.com/sitemap.xml

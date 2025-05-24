@@ -179,21 +179,17 @@ export default function Portfolio() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-gray-900 text-white">
               <nav className="flex flex-col space-y-4 mt-8">
-                {[
-                  "About",
-                  "Services",
-                  "Projects",
-                  "Experience",
-                  "Contact",
-                ].map((item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className="text-lg hover:text-orange-500 transition-colors"
-                  >
-                    {item}
-                  </a>
-                ))}
+                {["About", "Services", "Projects", "Experience", "Contact"].map(
+                  (item) => (
+                    <a
+                      key={item}
+                      href={`#${item.toLowerCase()}`}
+                      className="text-lg hover:text-orange-500 transition-colors"
+                    >
+                      {item}
+                    </a>
+                  )
+                )}
               </nav>
             </SheetContent>
           </Sheet>
@@ -584,8 +580,233 @@ export default function Portfolio() {
               <span className="sr-only">LinkedIn</span>
             </Link>
           </div>
+          <div className="flex justify-center space-x-4 mb-4">
+            {/* Datenschutz Sheet */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <button className="text-sm text-gray-400 hover:text-white underline">
+                  Datenschutz
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="bottom"
+                className="max-h-[80vh] overflow-y-auto bg-gray-900 text-white"
+              >
+                <h2 className="text-xl font-bold mb-4">Datenschutzerklärung</h2>
+                <div className="text-gray-300 space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      1. Datenschutz auf einen Blick
+                    </h3>
+                    <p className="mb-3">
+                      <strong>Allgemeine Hinweise:</strong> Die folgenden
+                      Hinweise geben einen einfachen Überblick darüber, was mit
+                      Ihren personenbezogenen Daten passiert, wenn Sie unsere
+                      Website besuchen. Personenbezogene Daten sind alle Daten,
+                      mit denen Sie persönlich identifiziert werden können.
+                    </p>
+                    <p className="mb-3">
+                      <strong>Datenerfassung auf unserer Website:</strong> Die
+                      Datenverarbeitung auf dieser Website erfolgt durch den
+                      Websitebetreiber. Dessen Kontaktdaten können Sie dem
+                      Impressum dieser Website entnehmen.
+                    </p>
+                    <p className="mb-3">
+                      <strong>Wie erfassen wir Ihre Daten?</strong> Ihre Daten
+                      werden zum einen dadurch erhoben, dass Sie uns diese
+                      mitteilen. Hierbei kann es sich z. B. um Daten handeln,
+                      die Sie in ein Kontaktformular eingeben. Andere Daten
+                      werden automatisch beim Besuch der Website durch unsere
+                      IT-Systeme erfasst. Das sind vor allem technische Daten
+                      (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des
+                      Seitenaufrufs). Die Erfassung dieser Daten erfolgt
+                      automatisch, sobald Sie unsere Website betreten.
+                    </p>
+                    <p className="mb-3">
+                      <strong>Wofür nutzen wir Ihre Daten?</strong> Ein Teil der
+                      Daten wird erhoben, um eine fehlerfreie Bereitstellung der
+                      Website zu gewährleisten. Andere Daten können zur Analyse
+                      Ihres Nutzerverhaltens verwendet werden.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      2. Hosting
+                    </h3>
+                    <p className="mb-3">
+                      <strong>Externes Hosting:</strong> Diese Website wird bei
+                      einem externen Dienstleister gehostet (Vercel Inc.). Die
+                      personenbezogenen Daten, die auf dieser Website erfasst
+                      werden, werden auf den Servern des Hosters gespeichert.
+                      Hierbei kann es sich v. a. um IP-Adressen, Meta- und
+                      Kommunikationsdaten, Websitezugriffe und sonstige Daten
+                      handeln, die über eine Website generiert werden.
+                    </p>
+                    <p className="mb-3">
+                      <strong>
+                        Abschluss eines Vertrages über Auftragsverarbeitung:
+                      </strong>{" "}
+                      Wir haben mit Vercel einen Vertrag zur
+                      Auftragsverarbeitung abgeschlossen, in dem wir Vercel
+                      verpflichten, die Daten unserer Kunden zu schützen und sie
+                      nicht an Dritte weiterzugeben.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      3. Datenerfassung auf unserer Website
+                    </h3>
+                    <p className="mb-3">
+                      <strong>Server-Log-Dateien:</strong> Der Provider der
+                      Seiten erhebt und speichert automatisch Informationen in
+                      sogenannten Server-Log-Dateien, die Ihr Browser
+                      automatisch an uns übermittelt. Dies sind:
+                    </p>
+                    <ul className="list-disc pl-6 mb-3 space-y-1">
+                      <li>Browsertyp und Browserversion</li>
+                      <li>verwendetes Betriebssystem</li>
+                      <li>Referrer URL</li>
+                      <li>Hostname des zugreifenden Rechners</li>
+                      <li>Uhrzeit der Serveranfrage</li>
+                      <li>IP-Adresse</li>
+                    </ul>
+                    <p className="mb-3">
+                      Eine Zusammenführung dieser Daten mit anderen Datenquellen
+                      wird nicht vorgenommen.
+                    </p>
+                    <p className="mb-3">
+                      <strong>Grundlage für die Datenverarbeitung:</strong> Die
+                      Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
+                      Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein
+                      berechtigtes Interesse an der technisch fehlerfreien
+                      Darstellung und der Optimierung seiner Website – hierzu
+                      müssen die Server-Log-Files erfasst werden.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      4. Analyse-Tools und Tools von Drittanbietern
+                    </h3>
+                    <p className="mb-3">
+                      <strong>Vercel Analytics:</strong> Diese Website nutzt
+                      Vercel Analytics, einen Webanalysedienst der Vercel Inc.
+                      Vercel Analytics verwendet keine Cookies und speichert
+                      keine personenbezogenen Daten. Die Analyse erfolgt
+                      anonymisiert.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      5. Plugins und Tools
+                    </h3>
+                    <p className="mb-3">
+                      <strong>Google Fonts:</strong> Diese Seite nutzt zur
+                      einheitlichen Darstellung von Schriftarten sogenannte
+                      Google Fonts, die von Google bereitgestellt werden. Beim
+                      Aufruf einer Seite lädt Ihr Browser die benötigten Fonts
+                      in ihren Browsercache, um Texte und Schriftarten korrekt
+                      anzuzeigen.
+                    </p>
+                    <p className="mb-3">
+                      <strong>Hinweis:</strong> Beim Laden der Google Fonts wird
+                      eine Verbindung zu Servern von Google hergestellt. Dabei
+                      kann Google ermitteln, welche Website Sie besucht haben.
+                      Auch wird die IP-Adresse des Browsers des Endgeräts des
+                      Besuchers dieser Internetseiten von Google gespeichert.
+                    </p>
+                    <p className="mb-3">
+                      <strong>Grundlage für die Datenverarbeitung:</strong> Die
+                      Nutzung von Google Fonts erfolgt im Interesse einer
+                      einheitlichen und ansprechenden Darstellung unserer
+                      Online-Angebote. Dies stellt ein berechtigtes Interesse im
+                      Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      6. Ihre Rechte
+                    </h3>
+                    <p className="mb-3">
+                      Sie haben jederzeit das Recht auf unentgeltliche Auskunft
+                      über Ihre gespeicherten personenbezogenen Daten, deren
+                      Herkunft und Empfänger und den Zweck der Datenverarbeitung
+                      sowie ein Recht auf Berichtigung oder Löschung dieser
+                      Daten. Hierzu sowie zu weiteren Fragen zum Thema
+                      Datenschutz können Sie sich jederzeit unter der im
+                      Impressum angegebenen Adresse an uns wenden.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      7. Widerspruch gegen Werbe-Mails
+                    </h3>
+                    <p className="mb-3">
+                      Der Nutzung von im Rahmen der Impressumspflicht
+                      veröffentlichten Kontaktdaten zur Übersendung von nicht
+                      ausdrücklich angeforderter Werbung und
+                      Informationsmaterialien wird hiermit widersprochen. Der
+                      Betreiber der Seiten behält sich ausdrücklich rechtliche
+                      Schritte im Falle der unverlangten Zusendung von
+                      Werbeinformationen, etwa durch Spam-E-Mails, vor.
+                    </p>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+
+            {/* Impressum Sheet */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <button className="text-sm text-gray-400 hover:text-white underline">
+                  Impressum
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="bottom"
+                className="max-h-[80vh] overflow-y-auto bg-gray-900 text-white"
+              >
+                <h2 className="text-xl font-bold mb-4">Impressum</h2>
+                <div className="text-gray-300 space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      Angaben gemäß § 5 TMG:
+                    </h3>
+                    <div className="space-y-1">
+                      <p>Jonas Werner</p>
+                      <p>Pförtchenstraße 4</p>
+                      <p>99096 Erfurt</p>
+                      <p>Deutschland</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">Kontakt:</h3>
+                    <p>E-Mail: contact@jonaswerner.com</p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+                    </h3>
+                    <div className="space-y-1">
+                      <p>Jonas Werner</p>
+                      <p>Pförtchenstraße 4</p>
+                      <p>99096 Erfurt</p>
+                      <p>Deutschland</p>
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
           <div className="text-center text-sm text-gray-400">
-            <p>© 2024 Jonas Werner. All rights reserved.</p>
+            <p>© 2025 Jonas Werner. All rights reserved.</p>
           </div>
         </div>
       </footer>

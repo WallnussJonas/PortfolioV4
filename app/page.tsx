@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,6 +22,7 @@ import Link from "next/link";
 import { ContactCard, ContactCardContent } from "@/components/ui/contactcard";
 
 export default function Portfolio() {
+  const [showPhone, setShowPhone] = useState(false);
   const skills = [
     { name: "Web Development", level: 90 },
     { name: "UI/UX Design", level: 85 },
@@ -474,9 +475,18 @@ export default function Portfolio() {
                   height={34}
                 />
                 <h3 className="text-lg font-semibold text-white mb-2">Phone</h3>
-                <p className="text-gray-400 text-center">
-                  +49 (176) 58 87 62 65
-                </p>
+                {!showPhone ? (
+                  <button
+                    onClick={() => setShowPhone(true)}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors"
+                  >
+                    Show Phone Number
+                  </button>
+                ) : (
+                  <p className="text-gray-400 text-center">
+                    +49 (176) 58 87 62 65
+                  </p>
+                )}
               </ContactCardContent>
             </ContactCard>
             <ContactCard className="bg-gray-800 border-gray-700">

@@ -62,11 +62,6 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Schulsync.com",
-      image: "/images/Schulsync.png",
-      link: "https://schulsync.com",
-    },
-    {
       title: "Sausage Clicker",
       image: "/images/SausageClicker.png",
       link: "https://github.com/WallnussJonas/Sausage-Clicker",
